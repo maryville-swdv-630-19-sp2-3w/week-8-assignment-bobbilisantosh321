@@ -33,9 +33,10 @@ class ReservationDao (Base):
     def createReservation(customerId, billId, roomId, fromDate, toDate):
         #create reservation with details and status as reserved, return reservationId
         session = DataBaseSession().createSession()
-        session.add(ReservationDao(uuid.uuid4().hex, customerId, billId, roomId, fromDate, toDate, 'WAITING FOR PAYMENT'))
+        reservationId = uuid.uuid4().hex
+        session.add(ReservationDao(reservationId, customerId, billId, roomId, fromDate, toDate, 'WAITING FOR PAYMENT'))
         session.commit()
-        return ReservationDao.getReservationByCustomerId(customerId).reservationId
+        return reservationId
 
     @staticmethod
     def getReservationByCustomerId(cusId):

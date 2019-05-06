@@ -19,6 +19,7 @@ class Receptionist(Role):
         self.receptionistName = "Rita"
 
     def displayActions(self):
+        #Display action relevant for Receotionist
         print("Select one of the actions in the below list: ")
         print("1. List Available Rooms")
         print("2. Create a Reservation")
@@ -29,29 +30,24 @@ class Receptionist(Role):
         print("7. Create a New Customer")
         print("8. Update Customer Details ")
 
-    def performAction(self, action):
-        if action == 1:
+    def performAction(self, scrnInput):
+        #Method to executed action selected
+        if scrnInput == 1:
             self.listAvailableRooms()
-        elif action == 2:
+        elif scrnInput == 2:
             self.createReservation()
-        elif action == 3:
+        elif scrnInput == 3:
             self.getReservationDetails()
-        elif action == 4:
+        elif scrnInput == 4:
             self.getCustomerDueDetails()
-        elif action == 5:
+        elif scrnInput == 5:
             self.getAllCustomersDetails()
-        elif action == 6:
+        elif scrnInput == 6:
             self.getAllRoomsDetails()
-        elif action == 7:
+        elif scrnInput == 7:
              customerId = Customer.createNewCustomer()
-        elif action == 8:
-            while True:
-               try:
-                   personId = int(input("Enter the customer Id: "))
-                   break
-               except:
-                   print("ID can only a number, please try again\n")
-
+        elif scrnInput == 8:
+            personId = int(input("Enter the customerId: "))
             try:
                 person = Customer(personId)
                 Customer.updateCustomerDetails(person)
@@ -62,6 +58,7 @@ class Receptionist(Role):
             return
 
     def listAvailableRooms(self):
+        #Method to Display all the Rooms with Available status
         roomsMap = RoomDao.listAvailableRooms()
 
         print("\n\n********************************************************")
@@ -71,6 +68,7 @@ class Receptionist(Role):
         print("********************************************************\n\n")
 
     def createReservation(self):
+        #Method to create a Reservation
         print("\n \n")
         print("***************************************************************")
         print("START A RESERVATION")
@@ -110,26 +108,30 @@ class Receptionist(Role):
         roomId = RoomDao.bookRoom(roomType.upper())
         billId = BillDao.createBill(roomId, customerId, amount)
         reservationId = ReservationDao.createReservation(customerId, billId, roomId, startTimeObj, endTimeObj)
+        bill = Bill(billId)
 
         print("---------------------------------------------------------------")
         print("Reservation is successful")
         print("Customer name is {0}".format(customer.customerName))
         print("")
-        print("Room Type is {0} with Id {1}".format(roomType, roomId))
+        print("Room Type is {0} with reservation ID {1}".format(roomType, reservationId))
         print("Start time is {0}".format(startTimeObj))
         print("End time is {0}".format(endTimeObj))
         print("Amount for reservation is {0}".format(amount))
+        print("Bill status of the reservation is {0}".format(bill.status))
         print("---------------------------------------------------------------")
         print("***************************************************************")
         return reservationId
 
     def generateAmountForReservation(self, startTimeObj, endTimeObj, roomType):
+        #Method to  Calculate Amount for Reservation
         if endTimeObj < datetime.datetime.now().date():
             raise Exception("Invalid end date for reservation. Please enter future date")
         days = endTimeObj - startTimeObj
         return days.days * roomPrices[roomType.upper()]
 
     def getReservationDetails(self):
+        #Method to get list of reservations by a Customer
         print("\n\n***********************************************************")
         customerId = input("Provide the customer id to get the reservation details: ")
         try:
@@ -150,10 +152,12 @@ class Receptionist(Role):
             print("End time is {0}".format(reservation.toDate))
             print("Amount for reservation is {0} USD".format(Bill(reservation.billId).amount))
             print("Reservation status is {0}".format(reservation.status))
+            print("Billing status of reservation is {0}".format(Bill(reservation.billId).status))
             print("***************************************************************")
         print("***************************************************************\n\n")
     
     def getCustomerDueDetails(self):
+        #Method to get Payment due by Customer
         print("\n\n***********************************************************")
         customerId = input("Provide the customer id to get the Payment Due: ")
         try:
@@ -178,6 +182,7 @@ class Receptionist(Role):
         print("***************************************************************\n\n")
     
     def getAllCustomersDetails(self):
+        #Method to get all Customer in the System
         print("\n\n***********************************************************")
         try:
             customers = CustomerDao.getAllCustomer()
@@ -193,6 +198,7 @@ class Receptionist(Role):
         print("***************************************************************\n\n")
 
     def getAllRoomsDetails(self):
+        #Method to get all rooms in the system with their status
         print("\n\n***********************************************************")
         try:
             rooms = RoomDao.getAllRooms()

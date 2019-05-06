@@ -28,17 +28,17 @@ class Customer(Role):
         print("4. Check in to a room")
         print("5. Check out a room")
 
-    def performAction(self, input):
+    def performAction(self, scrnInput):
         #Method to executed action selected
-        if input == 1:
+        if scrnInput == 1:
             self.getCustomerReservation()
-        elif input == 2:
+        elif scrnInput == 2:
             self.cancelCustomerReservation()
-        elif input == 3:
+        elif scrnInput == 3:
             self.payForReservation()
-        elif input == 4:
+        elif scrnInput == 4:
             self.checkinRoom()
-        elif input == 5:
+        elif scrnInput == 5:
             self.checkoutRoom()
         else:
             print("Invalid action to execute")
@@ -64,7 +64,7 @@ class Customer(Role):
             print("Start time is {0}".format(reservation.fromDate))
             print("End time is {0}".format(reservation.toDate))
             print("Amount for reservation is {0} USD".format(Bill(reservation.billId).amount))
-            print("Payment status is {0}".format(Bill(reservation.billId).amount))
+            print("Payment status is {0}".format(Bill(reservation.billId).status))
             print("Reservation status is {0}".format(reservation.status))
             print("***************************************************************")
         print("***************************************************************\n\n")
@@ -83,11 +83,12 @@ class Customer(Role):
         count = 1
         for reservation in reservations:
             print("{0}. Reservation ID {1}".format(count, reservation.reservationId))
-            count =+ 1
+            count = count + 1
         while True:
-            index = input("Select a reservation from above to cancel: ")
-            index =- 1
-            try: reservation = reservations[index]
+            try:
+                index = int(input("Select a reservation from above to cancel: "))
+                index = index - 1
+                reservation = reservations[index]
             except: print("Invalid selection, please try again")
             else: break
         startTimeObj = datetime.datetime.strptime(reservation.fromDate, '%Y-%m-%d')
@@ -116,11 +117,12 @@ class Customer(Role):
         count = 1
         for reservation in reservations:
             print("{0}. Reservation ID {1}".format(count, reservation.reservationId))
-            count =+ 1
+            count = count + 1
         while True:
-            index = input("Select a reservation from above(Press Enter for default selection of 1): ")
-            index =- 1
-            try: reservation = reservations[index]
+            try:
+                index = int(input("Select a reservation from above: "))
+                index = index - 1
+                reservation = reservations[index]
             except: print("Invalid selection, please try again")
             else: break
         print("Pay for reservation {0}".format(reservation.reservationId))
@@ -130,7 +132,7 @@ class Customer(Role):
             return
         print("The amount to be paid is {0} USD".format(Bill(reservation.billId).amount))
         cardNum = input("Enter payment card number ")
-        BillDao.updatePaymentDetails(reservation.billId, cardNum)
+        BillDao.updatePaymentDetails(reservation.billId, 'PAID', cardNum)
         ReservationDao.updateReservationStatus(reservation.reservationId, "RESERVED")
         print("Payment is successful for amount {0} USD".format(Bill(reservation.billId).amount))
         print("*********************************************************")
@@ -150,11 +152,12 @@ class Customer(Role):
         count = 1
         for reservation in reservations:
             print("{0}. Reservation ID {1}".format(count, reservation.reservationId))
-            count =+ 1
+            count = count + 1
         while True:
-            index = input("Select a reservation from above(Press Enter for default selection of 1): ")
-            index =- 1
-            try: reservation = reservations[index]
+            try:
+                index = int(input("Select a reservation from above: "))
+                index = index - 1
+                reservation = reservations[index]
             except: print("Invalid selection, please try again")
             else: break
         if reservation.status == "CHECK-IN":
@@ -183,11 +186,12 @@ class Customer(Role):
         count = 1
         for reservation in reservations:
             print("{0}. Reservation ID {1}".format(count, reservation.reservationId))
-            count =+ 1
+            count = count + 1
         while True:
-            index = input("Select a reservation from above(Press Enter for default selection of 1): ")
-            index =- 1
-            try: reservation = reservations[index]
+            try:
+                index = int(input("Select a reservation from above: "))
+                index = index - 1
+                reservation = reservations[index]
             except: print("Invalid selection, please try again")
             else: break
         if reservation.status != "CHECK-IN":
@@ -227,7 +231,7 @@ class Customer(Role):
         print("\n\n*******************************************************************")
         print("Update details of customer id {0} ".format(customer.customerId))
         customerName = input("Enter the new customer name ({0}): ".format(customer.customerName))
-        customerEmail = input("Enter the new customer email: ({0}) ".format(customer.customerEmail))
+        customerEmail = input("Enter the new customer email ({0}): ".format(customer.customerEmail))
         CustomerDao.updateCustomer(customer.customerId, customerName, customerEmail)
         print("Customer updated successfully")
         print("**********************************************************************\n\n")

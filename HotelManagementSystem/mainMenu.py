@@ -63,9 +63,7 @@ class Main():
                 except: print("Invalid action selected\n")
                 else:
                 #Perform selected action
-                    person.performAction(action)
-                    break
-                
+                    person.performAction(action)                
 
 def runMain():
     #Prints Main menu

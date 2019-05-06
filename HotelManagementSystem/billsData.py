@@ -26,9 +26,10 @@ class BillDao (Base):
     def createBill(roomId, cusId, amount):
         #create a bill with these details and return billId with status "NOTPAID"
         session = DataBaseSession().createSession()
-        session.add(BillDao(roomId, cusId, amount, roomId, 'NOT PAID', '2341 16547 8222 2123'))
+        billId = uuid.uuid4().hex
+        session.add(BillDao(billId, cusId, amount, roomId, 'NOT PAID', '2341 16547 8222 2123'))
         session.commit()
-        return BillDao.getBillByCustomerId(cusId).billId
+        return billId
 
     @staticmethod
     def getBillByCustomerId(cusId):
@@ -45,9 +46,9 @@ class BillDao (Base):
         return billdao
 
     @staticmethod
-    def updatePaymentDetails(id, cardNum):
+    def updatePaymentDetails(id, status, cardNum):
         #update card num for the bill with given id and change status to PAID
         session = DataBaseSession().createSession()
-        session.query(BillDao).filter_by(billId=id).update({BillDao.cardNum: cardNum}, synchronize_session=False)
+        session.query(BillDao).filter_by(billId=id).update({BillDao.cardNum: cardNum, BillDao.billStatus: status}, synchronize_session=False)
         session.commit()
         return

@@ -1,5 +1,6 @@
 from roles import Role
 from roomsData import RoomDao
+from reservationData import ReservationDao
 
 class Manager(Role):
     def displayActions(self):
@@ -8,11 +9,11 @@ class Manager(Role):
         print("1. Display Rooms Inventory")
         print("2. Cancel Reservation")
 
-    def performAction(self, input):
+    def performAction(self, scrnInput):
         #Method to executed action selected
-        if input == 1:
+        if scrnInput == 1:
             self.getInventoryStatus()
-        elif input == 2:
+        elif scrnInput == 2:
             self.cancelCustomerReservation()
         else:
             print("Invalid action to execute")
@@ -37,23 +38,28 @@ class Manager(Role):
     def cancelCustomerReservation(self):
         #Method to cancel a Reservation
         print("\n\n***********************************************************")
-        customerId = input("Provide the customer id: ")
+        try:
+            customerId = int(input("Provide the customer id: "))
+        except:
+            print("Customer ID can be only a number")
+            return
         try:
             reservations = ReservationDao.getReservationsByCustomerId(customerId)
         except:
-            print("No reservation found for the given customerId {0}".format(customerId))
+            print("No reservations for the given customerId {0} found".format(customerId))
             return
         if reservations == None or reservations == []:
-            print("No reservation found for the given customerId {0}".format(self.customerId))
+            print("No reservation found for the given customerId {0}".format(customerId))
             return
         count = 1
         for reservation in reservations:
             print("{0}. Reservation ID {1}".format(count, reservation.reservationId))
-            count =+ 1
+            count = count + 1
         while True:
-            index = input("Select a reservation from above to cancel: ")
-            index =- 1
-            try: reservation = reservations[index]
+            try:
+                index = int(input("Select a reservation from above to cancel: "))
+                index = index - 1
+                reservation = reservations[index]
             except: print("Invalid selection, please try again")
             else: break
         if reservation.status == "CANCEL":
