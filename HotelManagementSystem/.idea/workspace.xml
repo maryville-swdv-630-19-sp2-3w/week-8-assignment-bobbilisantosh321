@@ -4,26 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/roomsData.py" line="59" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13658417-3c07-43b7-a7c3-a2b76392146a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/HotelManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HotelManagementSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billRole.py" beforeDir="false" afterPath="$PROJECT_DIR$/billRole.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billsData.py" beforeDir="false" afterPath="$PROJECT_DIR$/billsData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerData.py" beforeDir="false" afterPath="$PROJECT_DIR$/customerData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerRole.py" beforeDir="false" afterPath="$PROJECT_DIR$/customerRole.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databaseSingleTon.py" beforeDir="false" afterPath="$PROJECT_DIR$/databaseSingleTon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainMenu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managerRole.py" beforeDir="false" afterPath="$PROJECT_DIR$/managerRole.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/receptionistRole.py" beforeDir="false" afterPath="$PROJECT_DIR$/receptionistRole.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservationData.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservationData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservationRole.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservationRole.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles.py" beforeDir="false" afterPath="$PROJECT_DIR$/roles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roomsData.py" beforeDir="false" afterPath="$PROJECT_DIR$/roomsData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sampleData.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleData.py" afterDir="false" />
-    </list>
+    <list default="true" id="13658417-3c07-43b7-a7c3-a2b76392146a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,16 +58,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainMenu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
+            <state relative-caret-position="189">
               <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/roles.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -101,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/managerRole.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -413,15 +399,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-138" y="114" width="1360" height="768" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24962631" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2490931" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.3496063" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.34927234" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -490,9 +476,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rooms.py" />
-    <entry file="file://$PROJECT_DIR$/roles.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/roomsData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
@@ -563,13 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerRole.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/customerData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
@@ -582,11 +558,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mainMenu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
+        <state relative-caret-position="189">
           <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerRole.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
