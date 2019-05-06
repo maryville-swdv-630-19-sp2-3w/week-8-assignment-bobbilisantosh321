@@ -63,6 +63,10 @@ and Customer. Below are the use cases categorized by each User role:
 
 ![](images_README/sequence_diagram.png)
 
+# Architecture Diagram
+
+![](images_README/Architecture_Diagram.png)
+
 # UI Sketch
 
 ![](images_README/UI_Sketch.png)
