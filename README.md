@@ -57,12 +57,12 @@ and Customer. Below are the use cases categorized by each User role:
     
 # Class Diagram
 
-![](HotelManagement_ClassDiagram.png)
+![](images_README/HotelManagement_ClassDiagram.png)
 
 # Sequence Diagram
 
-![](sequence_diagram.png)
+![](images_README/sequence_diagram.png)
 
 # UI Sketch
 
-![](UI_Sketch.png)
+![](images_README/UI_Sketch.png)
