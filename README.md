@@ -54,3 +54,15 @@ and Customer. Below are the use cases categorized by each User role:
     d) Check in to a room
     
     e) Check out a room
+    
+# Class Diagram
+
+![](HotelManagement_ClassDiagram.png)
+
+# Sequence Diagram
+
+![](sequence_diagram.png)
+
+# UI Sketch
+
+![](UI_Sketch.png)
