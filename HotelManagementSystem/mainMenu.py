@@ -17,10 +17,17 @@ class Main():
         print("***********************************************************")
     
     def runApplication(self):
+        #Default Variable value
+        person = None
         #Method to Run the Managemment Application
         while True:
-            #Get Input for Role ID for relevant actions to display 
-            role = int(input("Select your appropriate role: \n 1. Receptionist \n 2. Existing Customer \n 3. Manager \n 4. Exit \n Your Role: "))
+            #Get Input for Role ID for relevant actions to display
+            while True:
+                try:
+                    role = int(input("Select your appropriate role: \n 1. Receptionist \n 2. Existing Customer \n 3. Manager \n 4. Exit \n Your Role: "))
+                except:
+                    print("Invalid role to display menu, please try again\n")
+                else: break
             
             if role == 1:
                 #Role 1 - Receptionist
